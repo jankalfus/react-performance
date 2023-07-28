@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import React from "react";
 
 export const ReactMemoNotWorking = () => {
@@ -26,16 +26,17 @@ const ComponentA = ({ children, onClick }: ComponentAProps) => (
 const MemoizedComponentA = React.memo(ComponentA);
 
 const ComponentB = () => <span>Component B</span>;
-const MemoizedComponentB = React.memo(ComponentB);
 
 function MyComponent() {
   const handleClick = useCallback(() => {
     console.log("something");
   }, []);
 
+  const MemoizedComponentB = useMemo(() => <ComponentB />, []);
+
   return (
     <MemoizedComponentA onClick={handleClick}>
-      <MemoizedComponentB />
+      {MemoizedComponentB}
     </MemoizedComponentA>
   );
 }

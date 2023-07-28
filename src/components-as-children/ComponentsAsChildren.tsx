@@ -2,6 +2,39 @@ import { useState } from "react";
 import { SlowComponent } from "../shared/SlowComponent";
 
 export const ComponentsAsChildren = () => {
+  return (
+    <>
+      <CollapsibleMenu>
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+        <SlowComponent />
+      </CollapsibleMenu>
+    </>
+  );
+};
+
+const CollapsibleMenu = ({
+  children,
+}: {
+  children: React.ReactElement | ReadonlyArray<React.ReactElement>;
+}) => {
   const [scrollY, setScrollY] = useState(0);
   return (
     <>
@@ -13,26 +46,7 @@ export const ComponentsAsChildren = () => {
         }}
       >
         <Menu collapsed={scrollY > 0} />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
-        <SlowComponent />
+        {children}
       </div>
     </>
   );

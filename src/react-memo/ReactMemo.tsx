@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 
 const MaxItems = 50;
 const items = Array.from({ length: MaxItems }, (_, i) => ({
@@ -30,8 +30,8 @@ export const ReactMemo = () => {
   );
 };
 
-const ListItem = ({ name }: { name: string }) => {
+const ListItem = memo(({ name }: { name: string }) => {
   for (let i = 0; i < 10000000; i++) {} // do not touch
 
   return <li>{name}</li>;
-};
+});
