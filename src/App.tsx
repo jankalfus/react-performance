@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import { MoveStateDown } from "./move-state-down/MoveStateDown";
 import { ReactMemoNotWorking } from "./react-memo-not-working/ReactMemoNotWorking";
-import { FinalChallenge } from "./final-challenge/FinalChallenge";
 import { ComponentsAsChildren } from "./components-as-children/ComponentsAsChildren";
 import { ComponentsAsProps } from "./components-as-props/ComponentsAsProps";
 import { ReactMemo } from "./react-memo/ReactMemo";
@@ -32,10 +31,6 @@ const Paths = {
   ReactMemo: {
     path: "/react-memo",
     name: "React.memo",
-  },
-  FinalChallenge: {
-    path: "/final-challenge",
-    name: "Final challenge",
   },
 };
 
@@ -80,10 +75,6 @@ function App() {
             element={<ReactMemoNotWorking />}
           />
           <Route path={Paths.ReactMemo.path} element={<ReactMemo />} />
-          <Route
-            path={Paths.FinalChallenge.path}
-            element={<FinalChallenge />}
-          />
         </Routes>
       </BrowserRouter>
     </>
