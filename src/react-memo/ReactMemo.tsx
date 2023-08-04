@@ -12,6 +12,7 @@ export const ReactMemo = () => {
   return (
     <>
       <input
+        className="input input-bordered w-full max-w-xs"
         onChange={() => {
           setListItems((items) => {
             const indexToRemove = Math.floor(Math.random() * items.length);

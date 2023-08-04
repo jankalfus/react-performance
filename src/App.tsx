@@ -48,7 +48,7 @@ function App() {
     <>
       <BrowserRouter>
         <nav>
-          <ol>
+          <ol className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
             {Object.values(Paths).map((pathInfo) => (
               <li key={pathInfo.path}>
                 <Link to={pathInfo.path}>{pathInfo.name}</Link>
@@ -56,7 +56,7 @@ function App() {
             ))}
           </ol>
         </nav>
-        <h1>
+        <h1 className="text-2xl mt-8 mb-6">
           <PageTitle />
         </h1>
         <Routes>

@@ -7,13 +7,13 @@ export const ComponentsAsChildren = () => {
     <>
       <div>scrollY (for debug): {scrollY}</div>
       <div
+        className="border rounded"
         onScroll={(e) => {
           setScrollY(e.currentTarget.scrollTop);
         }}
         style={{
           width: "95vw",
           height: "50vh",
-          border: "1px solid black",
           textAlign: "center",
           overflowY: "scroll",
         }}
@@ -47,8 +47,10 @@ export const ComponentsAsChildren = () => {
 const Menu = ({ collapsed }: { collapsed: boolean }) => {
   return (
     <>
-      <div style={{ position: "absolute" }}>
-        {collapsed ? <CompactMenu /> : <FullMenu />}
+      <div className="absolute">
+        <div className="relative z-10">
+          {collapsed ? <CompactMenu /> : <FullMenu />}
+        </div>
       </div>
       <div style={{ marginTop: "calc(4rem + 42px)" }}></div>
     </>
@@ -68,15 +70,7 @@ const FullMenu = () => {
       }}
     >
       {MenuItems.map((item) => (
-        <li
-          key={item}
-          style={{
-            border: "1px solid black",
-            padding: "0.5rem",
-            background: "lightgrey",
-            cursor: "pointer",
-          }}
-        >
+        <li key={item} className="btn">
           {item}
         </li>
       ))}
@@ -86,16 +80,20 @@ const FullMenu = () => {
 
 const CompactMenu = () => {
   return (
-    <div
-      style={{
-        border: "1px solid black",
-        margin: "2rem",
-        padding: "0.5rem",
-        background: "lightgrey",
-        cursor: "pointer",
-      }}
-    >
-      Hamburger
-    </div>
+    <button className="btn btn-square m-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        className="inline-block w-5 h-5 stroke-current"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        ></path>
+      </svg>
+    </button>
   );
 };

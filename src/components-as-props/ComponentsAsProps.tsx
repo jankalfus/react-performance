@@ -6,10 +6,10 @@ export const ComponentsAsProps = () => {
 
   return (
     <div
+      className="border rounded"
       style={{
         display: "flex",
         overflowX: "hidden",
-        border: "1px solid grey",
         paddingRight: 20,
         position: "relative",
       }}
@@ -18,14 +18,14 @@ export const ComponentsAsProps = () => {
         <Content onShowDetailsClick={() => setShowDetails(true)} />
       </div>
       <div
+        className="border rounded-lg drop-shadow-lg"
         style={{
           flex: "0 0 400px",
-          border: "1px solid grey",
           position: "absolute",
           width: 300,
           right: showDetails ? 0 : -280,
           background: "white",
-          height: "calc(100% - 2 * 1px)",
+          height: "100%",
         }}
       >
         <Details onClose={() => setShowDetails(false)} />
@@ -40,7 +40,7 @@ const Content = ({
   onShowDetailsClick: () => void;
 }) => {
   return (
-    <>
+    <div className="p-4 flex flex-col items-start gap-4">
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
         placerat vitae tellus vel imperdiet. Nunc faucibus, lectus sit amet
@@ -58,21 +58,23 @@ const Content = ({
       <SlowComponent />
       <SlowComponent />
       <SlowComponent />
-      <SlowComponent />
-      <SlowComponent />
-      <button onClick={onShowDetailsClick}>Show me the details</button>
-    </>
+      <button className="btn" onClick={onShowDetailsClick}>
+        Show me the details
+      </button>
+    </div>
   );
 };
 
 const Details = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div style={{ padding: "1rem" }}>
+    <div className="flex flex-col items-start gap-4 p-4">
       <p>Details are here</p>
       <SlowComponent />
       <SlowComponent />
       <SlowComponent />
-      <button onClick={onClose}>Close</button>
+      <button className="btn" onClick={onClose}>
+        Close
+      </button>
     </div>
   );
 };

@@ -6,6 +6,7 @@ export const MoveStateDown = () => {
   return (
     <>
       <input
+        className="input input-bordered w-full max-w-xs mb-4"
         placeholder="Type something here"
         type="text"
         value={value}

@@ -8,7 +8,7 @@ export const ReactMemoNotWorking = () => {
 
   return (
     <>
-      <button onClick={() => setCount((count) => count + 1)}>
+      <button className="btn" onClick={() => setCount((count) => count + 1)}>
         Simulate parent re-render
       </button>
       <MyComponent />
