@@ -2,13 +2,14 @@ import { useCallback, useState } from "react";
 import "../App.css";
 import React from "react";
 
-const GrandParent = () => {
+export const ReactMemoNotWorking = () => {
+  // Don’t touch this component, this is here only to simulate re-rendering parent of MyComponent
   const [, setCount] = useState(0);
 
   return (
     <>
       <button onClick={() => setCount((count) => count + 1)}>
-        Increase count
+        Simulate parent re-render
       </button>
       <MyComponent />
     </>
@@ -39,5 +40,3 @@ function MyComponent() {
     </MemoizedParent>
   );
 }
-
-export default GrandParent;

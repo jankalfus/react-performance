@@ -6,7 +6,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import { MoveStateDown } from "./move-state-down/MoveStateDown";
-import ReactMemoNotWorking from "./react-memo-not-working/ReactMemoNotWorking";
+import { ReactMemoNotWorking } from "./react-memo-not-working/ReactMemoNotWorking";
 import { FinalChallenge } from "./final-challenge/FinalChallenge";
 import { ComponentsAsChildren } from "./components-as-children/ComponentsAsChildren";
 import { ComponentsAsProps } from "./components-as-props/ComponentsAsProps";
