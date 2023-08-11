@@ -15,6 +15,8 @@ export const MoveStateDown = () => {
         }}
       />
       <SlowComponent />
+      <SlowComponent />
+      <SlowComponent />
     </>
   );
 };
