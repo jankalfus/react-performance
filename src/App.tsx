@@ -1,6 +1,6 @@
 import {
   BrowserRouter,
-  Link,
+  NavLink,
   Route,
   Routes,
   useLocation,
@@ -45,13 +45,13 @@ const PageTitle = () => {
 
 function App() {
   return (
-    <>
+    <div className="p-4 max-w-7xl m-auto">
       <BrowserRouter>
         <nav>
           <ol className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box">
             {Object.values(Paths).map((pathInfo) => (
               <li key={pathInfo.path}>
-                <Link to={pathInfo.path}>{pathInfo.name}</Link>
+                <NavLink to={pathInfo.path}>{pathInfo.name}</NavLink>
               </li>
             ))}
           </ol>
@@ -77,7 +77,7 @@ function App() {
           <Route path={Paths.ReactMemo.path} element={<ReactMemo />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </div>
   );
 }
 

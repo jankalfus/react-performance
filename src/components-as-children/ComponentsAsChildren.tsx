@@ -7,15 +7,9 @@ export const ComponentsAsChildren = () => {
     <>
       <div>scrollY (for debug): {scrollY}</div>
       <div
-        className="border rounded"
+        className="border rounded w-full min-h-96 max-h-[70vh] overflow-y-scroll"
         onScroll={(e) => {
           setScrollY(e.currentTarget.scrollTop);
-        }}
-        style={{
-          width: "95vw",
-          height: "50vh",
-          textAlign: "center",
-          overflowY: "scroll",
         }}
       >
         <Menu collapsed={scrollY > 0} />
@@ -52,7 +46,8 @@ const Menu = ({ collapsed }: { collapsed: boolean }) => {
           {collapsed ? <CompactMenu /> : <FullMenu />}
         </div>
       </div>
-      <div style={{ marginTop: "calc(4rem + 42px)" }}></div>
+      {/* heigh of buttons + margins */}
+      <div className="mt-[calc(48px+2*16px)]"></div>
     </>
   );
 };
@@ -60,15 +55,7 @@ const Menu = ({ collapsed }: { collapsed: boolean }) => {
 const MenuItems = ["Menu item 1", "Menu item 2", "Menu item 3"];
 const FullMenu = () => {
   return (
-    <ul
-      style={{
-        listStyleType: "none",
-        display: "flex",
-        gap: "1rem",
-        padding: 0,
-        margin: "2rem",
-      }}
-    >
+    <ul className="m-4 flex gap-2">
       {MenuItems.map((item) => (
         <li key={item} className="btn">
           {item}
@@ -80,7 +67,7 @@ const FullMenu = () => {
 
 const CompactMenu = () => {
   return (
-    <button className="btn btn-square m-8">
+    <button className="btn btn-square m-4">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"

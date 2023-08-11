@@ -5,28 +5,13 @@ export const ComponentsAsProps = () => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
-    <div
-      className="border rounded"
-      style={{
-        display: "flex",
-        overflowX: "hidden",
-        paddingRight: 20,
-        position: "relative",
-      }}
-    >
-      <div style={{ flex: 1 }}>
+    <div className="border rounded-lg flex overflow-hidden pr-4 relative">
+      <div>
         <Content onShowDetailsClick={() => setShowDetails(true)} />
       </div>
       <div
-        className="border rounded-lg drop-shadow-lg"
-        style={{
-          flex: "0 0 400px",
-          position: "absolute",
-          width: 300,
-          right: showDetails ? 0 : -280,
-          background: "white",
-          height: "100%",
-        }}
+        className="absolute w-[300px] h-full bg-white border rounded-lg drop-shadow-lg"
+        style={{ right: showDetails ? 0 : -280 }}
       >
         <Details onClose={() => setShowDetails(false)} />
       </div>
