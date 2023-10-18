@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { SlowComponent } from "../shared/SlowComponent";
 
-export const MoveStateDown = () => {
+export const MoveState = () => {
   const [value, setValue] = useState("");
   return (
     <>

@@ -5,16 +5,16 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { MoveStateDown } from "./move-state-down/MoveStateDown";
+import { MoveState } from "./move-state/MoveState";
 import { ReactMemoNotWorking } from "./react-memo-not-working/ReactMemoNotWorking";
 import { ComponentsAsChildren } from "./components-as-children/ComponentsAsChildren";
 import { ComponentsAsProps } from "./components-as-props/ComponentsAsProps";
 import { ReactMemo } from "./react-memo/ReactMemo";
 
 const Paths = {
-  MoveStateDown: {
-    path: "/move-state-down",
-    name: "Move state down",
+  MoveState: {
+    path: "/move-state",
+    name: "Move state",
   },
   ComponentsAsChildren: {
     path: "/components-as-children",
@@ -61,7 +61,7 @@ function App() {
         </h1>
         <Routes>
           <Route path="/" element={<></>} />
-          <Route path={Paths.MoveStateDown.path} element={<MoveStateDown />} />
+          <Route path={Paths.MoveState.path} element={<MoveState />} />
           <Route
             path={Paths.ComponentsAsChildren.path}
             element={<ComponentsAsChildren />}
