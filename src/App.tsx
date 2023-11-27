@@ -24,13 +24,13 @@ const Paths = {
     path: "/components-as-props",
     name: "Components as props",
   },
-  ReactMemoNotWorking: {
-    path: "/react-memo-not-working",
-    name: "React.memo not working",
-  },
   ReactMemo: {
     path: "/react-memo",
     name: "React.memo",
+  },
+  ReactMemoNotWorking: {
+    path: "/react-memo-not-working",
+    name: "React.memo not working",
   },
 };
 
@@ -70,11 +70,11 @@ function App() {
             path={Paths.ComponentsAsProps.path}
             element={<ComponentsAsProps />}
           />
+          <Route path={Paths.ReactMemo.path} element={<ReactMemo />} />
           <Route
             path={Paths.ReactMemoNotWorking.path}
             element={<ReactMemoNotWorking />}
           />
-          <Route path={Paths.ReactMemo.path} element={<ReactMemo />} />
         </Routes>
       </BrowserRouter>
     </div>
