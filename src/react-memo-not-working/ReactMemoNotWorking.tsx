@@ -8,25 +8,25 @@ export const ReactMemoNotWorking = () => {
   return (
     <>
       <button className="btn" onClick={() => setCount((count) => count + 1)}>
-        Simulate parent re-render
+        Simulate MyComponent re-render
       </button>
       <MyComponent />
     </>
   );
 };
 
-type ParentProps = {
+type ComponentAProps = {
   readonly children: React.ReactElement;
   readonly onClick: () => void;
 };
 
-const Parent = ({ children, onClick }: ParentProps) => (
-  <div onClick={onClick}>Parent: {children}</div>
+const ComponentA = ({ children, onClick }: ComponentAProps) => (
+  <div onClick={onClick}>Component A: {children}</div>
 );
-const MemoizedParent = React.memo(Parent);
+const MemoizedComponentA = React.memo(ComponentA);
 
-const Child = () => <span>Child</span>;
-const MemoizedChild = React.memo(Child);
+const ComponentB = () => <span>Component B</span>;
+const MemoizedComponentB = React.memo(ComponentB);
 
 function MyComponent() {
   const handleClick = useCallback(() => {
@@ -34,8 +34,8 @@ function MyComponent() {
   }, []);
 
   return (
-    <MemoizedParent onClick={handleClick}>
-      <MemoizedChild />
-    </MemoizedParent>
+    <MemoizedComponentA onClick={handleClick}>
+      <MemoizedComponentB />
+    </MemoizedComponentA>
   );
 }
