@@ -10,7 +10,7 @@ export const ComponentsAsProps = () => {
         <Content onShowDetailsClick={() => setShowDetails(true)} />
       </div>
       <div
-        className="absolute w-[300px] h-full bg-white border rounded-lg drop-shadow-lg"
+        className="absolute w-[300px] h-full bg-white border rounded-lg drop-shadow-lg transition-all duration-200"
         style={{ right: showDetails ? 0 : -280 }}
       >
         <Details onClose={() => setShowDetails(false)} />
